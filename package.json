@@ -1,0 +1,61 @@
+{
+  "name": "vite-project",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "lintfix": "eslint ./src --ext .ts,.tsx --fix && prettier --write \"./**/*.{ts,tsx,css,md,json}\"",
+    "lint": "eslint ./src --ext .ts,.tsx && prettier --check \"./**/*.{ts,tsx,css,md,json}\"",
+    "typecheck": "tsc --pretty --noEmit",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lintfix"
+    ]
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.0",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
+    "@storybook/addon-actions": "6.4.18",
+    "@storybook/addon-essentials": "6.4.18",
+    "@storybook/addon-links": "6.4.18",
+    "@storybook/react": "6.4.18",
+    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/react-hooks": "7.0.2",
+    "@types/jest": "27.4.0",
+    "@types/react": "17.0.39",
+    "@types/react-dom": "17.0.11",
+    "@typescript-eslint/eslint-plugin": "5.10.2",
+    "@typescript-eslint/parser": "5.10.2",
+    "@vitejs/plugin-react": "1.1.4",
+    "babel-jest": "27.5.0",
+    "babel-loader": "8.2.3",
+    "eslint": "8.8.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jest": "26.0.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "husky": "7.0.4",
+    "jest": "27.5.0",
+    "lint-staged": "12.3.3",
+    "prettier": "2.5.1",
+    "react-test-renderer": "17.0.2",
+    "storybook-builder-vite": "0.1.15",
+    "typescript": "4.5.5",
+    "vite": "2.7.13"
+  }
+}
