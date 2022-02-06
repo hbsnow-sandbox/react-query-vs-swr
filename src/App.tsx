@@ -1,20 +1,14 @@
-import React from "react";
+import { useState } from "react";
 
-import { Button } from "./components/Button";
-import { useCount } from "./hooks/useCount";
+import { Users } from "./components/Users";
 
 export const App = (): JSX.Element => {
-  const [count, { countUp, countDown }] = useCount();
+  const [show, setShow] = useState(false);
 
   return (
     <main>
-      <p>count is: {count}</p>
-      <p>
-        <Button onClick={() => countUp()}>count up</Button>
-      </p>
-      <p>
-        <Button onClick={() => countDown()}>count down</Button>
-      </p>
+      <button onClick={() => setShow((prev) => !prev)}>Toggle</button>
+      {show && <Users />}
     </main>
   );
 };
